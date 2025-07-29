@@ -1,0 +1,52 @@
+@model List<AAUP_LabMaster.Models.User>
+@{
+    ViewData["Title"] = "User Management";
+    Layout = "_AdminLayout";}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <a asp-action="AddUser" asp-controller="Admin"
+       class="inline-block mb-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        + Add New User
+    </a>
+ 
+
+<h2 class="text-2xl font-bold mb-4">User List</h2>
+  <table class="table-auto w-full text-left border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="px-4 py-2">FullName</th>
+        <th class="px-4 py-2">Email</th>
+        <th class="px-4 py-2">Role</th>
+        <th class="px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach(var user in Model)
+    {
+      <tr class="border-b">
+        <td class="px-4 py-2">@user.FullName</td>
+        <td class="px-4 py-2">@user.Email</td>
+        <td class="px-4 py-2">@user.Role</td>
+        <td class="px-4 py-2">
+          <!-- Edit Button -->
+          <a href="@Url.Action("UpdateUser", "Admin", new { id = user.Id })" 
+          class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Edit
+        </a>
+          <!-- Delete Button -->
+          <a href="@Url.Action("DeleteUser", "Admin", new { id = user.Id })" 
+             class="inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+             Delete
+          </a>
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</body>
+</html>

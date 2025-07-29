@@ -1,0 +1,135 @@
+@model AAUP_LabMaster.Models.User
+ 
+@{
+    Layout = "_AdminLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.08)',
+                        'soft-hover': '0 8px 25px -5px rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .action-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+        .action-card:hover {
+            transform: translateY(-4px);
+        }
+        .icon-wrapper {
+            transition: all 0.3s ease;
+        }
+        .action-card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="mb-10">
+            <h1 class="text-3xl font-bold text-dark">Admin Dashboard</h1>
+            <p class="text-gray-600 mt-2">Welcome back, manage your lab resources efficiently</p>
+        </div>
+        
+        <!-- Quick Actions Section -->
+        <div class="mb-12">
+            
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Booking Management -->
+                @* <a href="/Admin/BookingManagement" class="group">
+                    <div class="action-card bg-white p-8 rounded-2xl shadow-soft hover:shadow-soft-hover border border-gray-100 hover:border-primary/50 h-full flex flex-col">
+                        <div class="flex-grow">
+                            <div class="icon-wrapper bg-primary/10 p-4 rounded-xl text-primary group-hover:bg-primary/20 inline-flex mb-6">
+                                <i class="fas fa-calendar-plus text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-dark group-hover:text-primary transition mb-3">Booking Management</h3>
+                            <p class="text-gray-600">Manage all lab equipment bookings and reservations</p>
+                        </div>
+                        <div class="mt-6 text-sm text-primary font-medium flex items-center">
+                            <span>Go to Bookings</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a> *@
+
+                <!-- User Management -->
+                <a href="/Admin/UserManagement" class="group">
+                    <div class="action-card bg-white p-8 rounded-2xl shadow-soft hover:shadow-soft-hover border border-gray-100 hover:border-secondary/50 h-full flex flex-col">
+                        <div class="flex-grow">
+                            <div class="icon-wrapper bg-secondary/10 p-4 rounded-xl text-secondary group-hover:bg-secondary/20 inline-flex mb-6">
+                                <i class="fas fa-user-cog text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-dark group-hover:text-secondary transition mb-3">User Management</h3>
+                            <p class="text-gray-600">Control user accounts, roles and permissions</p>
+                        </div>
+                        <div class="mt-6 text-sm text-secondary font-medium flex items-center">
+                            <span>Manage Users</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Lab Settings -->
+                <a href="/Admin/LabSettings" class="group">
+                    <div class="action-card bg-white p-8 rounded-2xl shadow-soft hover:shadow-soft-hover border border-gray-100 hover:border-purple-500/50 h-full flex flex-col">
+                        <div class="flex-grow">
+                            <div class="icon-wrapper bg-purple-500/10 p-4 rounded-xl text-purple-500 group-hover:bg-purple-500/20 inline-flex mb-6">
+                                <i class="fas fa-flask text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-dark group-hover:text-purple-500 transition mb-3">Lab Settings</h3>
+                            <p class="text-gray-600">Configure labs, equipment and maintenance</p>
+                        </div>
+                        <div class="mt-6 text-sm text-purple-500 font-medium flex items-center">
+                            <span>Lab Configuration</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Reports -->
+                <a href="/Admin/Reports" class="group">
+                    <div class="action-card bg-white p-8 rounded-2xl shadow-soft hover:shadow-soft-hover border border-gray-100 hover:border-blue-500/50 h-full flex flex-col">
+                        <div class="flex-grow">
+                            <div class="icon-wrapper bg-blue-500/10 p-4 rounded-xl text-blue-500 group-hover:bg-blue-500/20 inline-flex mb-6">
+                                <i class="fas fa-chart-bar text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-dark group-hover:text-blue-500 transition mb-3">Reports & Analytics</h3>
+                            <p class="text-gray-600">View lab usage statistics and generate reports</p>
+                        </div>
+                        <div class="mt-6 text-sm text-blue-500 font-medium flex items-center">
+                            <span>View Reports</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+      
+        </div>
+    </div>
+</body>
+</html>

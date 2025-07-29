@@ -1,0 +1,6 @@
+@AAUP_LabMaster_HostAddress = http://localhost:5087
+
+GET {{AAUP_LabMaster_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
