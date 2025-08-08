@@ -88,8 +88,3 @@ Name: Thekra Jaradat
 Field: Computer Science Graduate
 
 
-نسخ
-تحرير
-
-نسخ
-تحرير
