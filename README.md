@@ -17,27 +17,29 @@
 
 1. **Clone the repository:**
 
-```bash
+```
 git clone https://github.com/your-username/AAUP_LabMaster.git
 cd AAUP_LabMaster
-
-Configure the database connection:
+```
+2 Configure the database connection:
 
 In appsettings.json, set your connection string:
-
+```
 "ConnectionStrings": {
   "DefaultConnection": "Server=.;Database=LabMasterDB;Trusted_Connection=True;"
 }
+```
 
-
-Apply database migrations:
+3 Apply database migrations:
+```
 dotnet ef database update
-
-Run the project:
+```
+4 Run the project:
+```
 dotnet run
-
-
- Project Structure
+```
+---
+## Project Structure
 Controllers/ → Request handlers (Account, Admin, User, Supervisor, etc.)
 
 EntityManager/ → Business logic and data managers (e.g., BookingManager, LabManager)
@@ -53,8 +55,8 @@ wwwroot/ → Static frontend assets (CSS, JS, images)
 Migrations/ → Database migrations
 
 
-
- Input / Output Overview
+---
+## Input / Output Overview
 Users:
 
 Input: Register, login, request equipment booking
@@ -73,16 +75,17 @@ Input: Manage users and devices
 
 Output: Dashboard statistics and controls
 
-
- Notes
+---
+## Notes
+---
 The system follows the MVC architecture: Model - View - Controller
 
 Entity Framework Core is used for database operations
 
 Supports future extensibility (email notifications, reporting, statistics, etc.)
 
-
-Developer
+---
+## Developer
 Name: Thekra Jaradat
 
 Field: Computer Science Graduate
